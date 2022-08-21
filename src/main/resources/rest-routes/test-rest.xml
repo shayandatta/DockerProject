@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<rest tag="Test" path="/api"
+	xmlns="http://camel.apache.org/schema/spring">
+	<description>Camel route test api</description>
+	<get uri="/message" produces="application/json"
+		outType="java.lang.String">
+		<description>For getting camel route test messages</description>
+		<route id="myroute1">
+			<to uri="direct:myroute2" />
+		</route>
+	</get>
+</rest>
